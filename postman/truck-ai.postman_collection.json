@@ -1,0 +1,110 @@
+{
+  "info": {
+    "name": "truck-ai",
+    "description": "Fleet Dispatch Dark-Data Structuring Agent - ingestion flow (Vehicle -> Trip -> Plain Text ingestion)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    { "key": "base_url", "value": "http://localhost:8084" },
+    { "key": "vehicleId", "value": "" },
+    { "key": "tripId", "value": "" }
+  ],
+  "item": [
+    {
+      "name": "1. Create Vehicle",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "{{base_url}}/api/vehicles", "host": ["{{base_url}}"], "path": ["api", "vehicles"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"currentDriverName\": \"Ramesh Kumar\",\n  \"fleetOwnerId\": 1\n}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const res = pm.response.json();",
+              "if (res.data && res.data.vehicleId) {",
+              "    pm.collectionVariables.set('vehicleId', res.data.vehicleId);",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "2. Create Trip",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "{{base_url}}/api/trips", "host": ["{{base_url}}"], "path": ["api", "trips"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"vehicleId\": {{vehicleId}},\n  \"originPlace\": \"Delhi\",\n  \"destinationPlace\": \"Jaipur\"\n}"
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "const res = pm.response.json();",
+              "if (res.data && res.data.tripId) {",
+              "    pm.collectionVariables.set('tripId', res.data.tripId);",
+              "}"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "3. Ingest Plain Text",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "{{base_url}}/api/ingestion/plain-text", "host": ["{{base_url}}"], "path": ["api", "ingestion", "plain-text"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tripId\": {{tripId}},\n  \"senderName\": \"Ramesh Kumar\",\n  \"rawText\": \"Gaadi Jaipur pahunch gayi, unloading start ho gayi hai\",\n  \"receivedAt\": \"2026-08-06T10:30:00\"\n}"
+        }
+      }
+    },
+    {
+      "name": "4. Ingest Form Entry (admin)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "{{base_url}}/api/ingestion/form", "host": ["{{base_url}}"], "path": ["api", "ingestion", "form"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tripId\": {{tripId}},\n  \"senderName\": \"Admin\",\n  \"rawText\": \"Vehicle departed origin at 09:00, load confirmed\",\n  \"receivedAt\": \"2026-08-06T09:05:00\"\n}"
+        }
+      }
+    },
+    {
+      "name": "5. Ingest WhatsApp Dump",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "url": { "raw": "{{base_url}}/api/ingestion/whatsapp", "host": ["{{base_url}}"], "path": ["api", "ingestion", "whatsapp"] },
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"tripId\": {{tripId}},\n  \"rawDump\": \"12/08/26, 10:15 - Ramesh Kumar: Gaadi loading ho rahi hai\\n12/08/26, 14:30 - Ramesh Kumar: Jaipur ke liye nikal gaye\"\n}"
+        }
+      }
+    }
+  ]
+}

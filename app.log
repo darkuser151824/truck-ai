@@ -1,0 +1,81 @@
+﻿.\mvnw.cmd : WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+At line:1 char:327
++ ...  }; cd E:\truck-ai\truck-ai; .\mvnw.cmd -q spring-boot:run *> app.log
++                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: A term...has been called:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by lombok.permit.Permit
+WARNING: Please consider reporting this to the maintainers of class lombok.permit.Permit
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::       (v4.1.1-SNAPSHOT)
+
+2026-08-07T17:48:44.391+05:30  INFO 22804 --- [truck-ai] [           main] c.example.truck_ai.TruckAiApplication    : Starting TruckAiApplication using Java 26.0.1 with PID 22804 (E:\truck-ai\truck-ai\target\classes started by hp in E:\truck-ai\truck-ai)
+2026-08-07T17:48:44.397+05:30 DEBUG 22804 --- [truck-ai] [           main] c.example.truck_ai.TruckAiApplication    : Running with Spring Boot v4.1.1-SNAPSHOT, Spring v7.0.9-SNAPSHOT
+2026-08-07T17:48:44.398+05:30  INFO 22804 --- [truck-ai] [           main] c.example.truck_ai.TruckAiApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-08-07T17:48:45.303+05:30  INFO 22804 --- [truck-ai] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-07T17:48:45.515+05:30  INFO 22804 --- [truck-ai] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 198 ms. Found 3 JPA repository interfaces.
+2026-08-07T17:48:46.146+05:30  INFO 22804 --- [truck-ai] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8084 (http)
+2026-08-07T17:48:46.163+05:30  INFO 22804 --- [truck-ai] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-08-07T17:48:46.163+05:30  INFO 22804 --- [truck-ai] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-08-07T17:48:46.245+05:30  INFO 22804 --- [truck-ai] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1780 ms
+2026-08-07T17:48:46.470+05:30  INFO 22804 --- [truck-ai] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-08-07T17:48:46.533+05:30  INFO 22804 --- [truck-ai] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-08-07T17:48:47.058+05:30  INFO 22804 --- [truck-ai] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-07T17:48:47.114+05:30  INFO 22804 --- [truck-ai] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-08-07T17:48:47.498+05:30  INFO 22804 --- [truck-ai] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@407f2029
+2026-08-07T17:48:47.500+05:30  INFO 22804 --- [truck-ai] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-08-07T17:48:47.547+05:30  WARN 22804 --- [truck-ai] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-07T17:48:47.607+05:30  INFO 22804 --- [truck-ai] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:8081/truckai]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: truckai/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-07T17:48:49.510+05:30  INFO 22804 --- [truck-ai] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-07T17:48:49.619+05:30  INFO 22804 --- [truck-ai] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-07T17:48:49.710+05:30  INFO 22804 --- [truck-ai] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-07T17:48:51.235+05:30  INFO 22804 --- [truck-ai] [           main] com.example.truck_ai.config.AiConfig     : KEY LOADED: null
+2026-08-07T17:48:51.288+05:30  WARN 22804 --- [truck-ai] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-07T17:48:51.651+05:30  WARN 22804 --- [truck-ai] [           main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Failed to start bean 'webServerStartStop'
+2026-08-07T17:48:51.653+05:30  INFO 22804 --- [truck-ai] [           main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-08-07T17:48:51.655+05:30  INFO 22804 --- [truck-ai] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2026-08-07T17:48:51.661+05:30  INFO 22804 --- [truck-ai] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2026-08-07T17:48:51.677+05:30  INFO 22804 --- [truck-ai] [           main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-08-07T17:48:51.691+05:30 ERROR 22804 --- [truck-ai] [           main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Web server failed to start. Port 8084 was already in use.
+
+Action:
+
+Identify and stop the process that's listening on port 8084 or configure this application to listen on another port.
+
+[ERROR] Failed to execute goal org.springframework.boot:spring-boot-maven-plugin:4.1.1-SNAPSHOT:run (default-cli) on project truck-ai: Process terminated with exit code: 1 -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoExecutionException

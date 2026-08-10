@@ -1,0 +1,495 @@
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by lombok.permit.Permit
+WARNING: Please consider reporting this to the maintainers of class lombok.permit.Permit
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::       (v4.1.1-SNAPSHOT)
+
+2026-08-08T12:35:48.690+05:30  INFO 24904 --- [truck-ai] [           main] c.example.truck_ai.TruckAiApplication    : Starting TruckAiApplication using Java 26.0.1 with PID 24904 (E:\truck-ai\truck-ai\target\classes started by hp in E:\truck-ai\truck-ai)
+2026-08-08T12:35:48.692+05:30 DEBUG 24904 --- [truck-ai] [           main] c.example.truck_ai.TruckAiApplication    : Running with Spring Boot v4.1.1-SNAPSHOT, Spring v7.0.9-SNAPSHOT
+2026-08-08T12:35:48.692+05:30  INFO 24904 --- [truck-ai] [           main] c.example.truck_ai.TruckAiApplication    : No active profile set, falling back to 1 default profile: "default"
+2026-08-08T12:35:49.202+05:30  INFO 24904 --- [truck-ai] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-08-08T12:35:49.325+05:30  INFO 24904 --- [truck-ai] [           main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 116 ms. Found 3 JPA repository interfaces.
+2026-08-08T12:35:49.691+05:30  INFO 24904 --- [truck-ai] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 8084 (http)
+2026-08-08T12:35:49.703+05:30  INFO 24904 --- [truck-ai] [           main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-08-08T12:35:49.704+05:30  INFO 24904 --- [truck-ai] [           main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.24]
+2026-08-08T12:35:49.750+05:30  INFO 24904 --- [truck-ai] [           main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 1019 ms
+2026-08-08T12:35:49.883+05:30  INFO 24904 --- [truck-ai] [           main] org.hibernate.orm.jpa                    : HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-08-08T12:35:49.930+05:30  INFO 24904 --- [truck-ai] [           main] org.hibernate.orm.core                   : HHH000001: Hibernate ORM core version 7.4.5.Final
+2026-08-08T12:35:50.260+05:30  INFO 24904 --- [truck-ai] [           main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-08-08T12:35:50.286+05:30  INFO 24904 --- [truck-ai] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2026-08-08T12:35:50.420+05:30  INFO 24904 --- [truck-ai] [           main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@407f2029
+2026-08-08T12:35:50.421+05:30  INFO 24904 --- [truck-ai] [           main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2026-08-08T12:35:50.459+05:30  WARN 24904 --- [truck-ai] [           main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2026-08-08T12:35:50.482+05:30  INFO 24904 --- [truck-ai] [           main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:8081/truckai]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 16.14
+	Default catalog/schema: truckai/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-08-08T12:35:52.271+05:30  INFO 24904 --- [truck-ai] [           main] org.hibernate.orm.core                   : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-08-08T12:35:52.430+05:30  INFO 24904 --- [truck-ai] [           main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-08-08T12:35:52.537+05:30  INFO 24904 --- [truck-ai] [           main] o.s.d.j.r.query.QueryEnhancerFactories   : Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-08-08T12:35:54.143+05:30  INFO 24904 --- [truck-ai] [           main] com.example.truck_ai.config.AiConfig     : KEY LOADED: null
+2026-08-08T12:35:54.200+05:30  WARN 24904 --- [truck-ai] [           main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-08-08T12:35:54.647+05:30  INFO 24904 --- [truck-ai] [           main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 8084 (http) with context path '/'
+2026-08-08T12:35:54.647+05:30  INFO 24904 --- [truck-ai] [           main] c.example.truck_ai.TruckAiApplication    : Started TruckAiApplication in 6.248 seconds (process running for 6.545)
+2026-08-08T12:36:35.916+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-3] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-08-08T12:36:35.916+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-3] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-08-08T12:36:35.916+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-3] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2026-08-08T12:36:35.944+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-3] c.e.t.controller.VehicleController       : HTTP GET /api/vehicles
+2026-08-08T12:36:35.944+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-3] c.e.truck_ai.service.VehicleService      : getAllVehicles() start
+Hibernate: 
+    select
+        v1_0.vehicle_id,
+        v1_0.current_driver_name,
+        v1_0.fleet_owner_id 
+    from
+        vehicles v1_0
+2026-08-08T12:36:36.084+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-3] c.e.truck_ai.service.VehicleService      : getAllVehicles(): found 9 vehicles
+2026-08-08T12:36:40.375+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-8] c.e.t.controller.VehicleController       : HTTP GET /api/vehicles/1
+2026-08-08T12:36:40.375+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-8] c.e.truck_ai.service.VehicleService      : getVehicleById() start: vehicleId=1
+Hibernate: 
+    select
+        v1_0.vehicle_id,
+        v1_0.current_driver_name,
+        v1_0.fleet_owner_id 
+    from
+        vehicles v1_0 
+    where
+        v1_0.vehicle_id=?
+2026-08-08T12:36:40.431+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-6] c.e.t.controller.VehicleController       : HTTP GET /api/vehicles/999999
+2026-08-08T12:36:40.431+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-6] c.e.truck_ai.service.VehicleService      : getVehicleById() start: vehicleId=999999
+Hibernate: 
+    select
+        v1_0.vehicle_id,
+        v1_0.current_driver_name,
+        v1_0.fleet_owner_id 
+    from
+        vehicles v1_0 
+    where
+        v1_0.vehicle_id=?
+2026-08-08T12:36:40.434+05:30  WARN 24904 --- [truck-ai] [nio-8084-exec-6] c.e.truck_ai.service.VehicleService      : getVehicleById() rejected: no Vehicle found for vehicleId=999999
+2026-08-08T12:36:40.436+05:30  WARN 24904 --- [truck-ai] [nio-8084-exec-6] c.e.t.exception.GlobalExceptionHandler   : Handled EntityNotFoundException -> 404: No vehicle found for vehicleId=999999
+2026-08-08T12:36:40.468+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-4] c.e.t.controller.VehicleController       : HTTP GET /api/vehicles/1/trips
+2026-08-08T12:36:40.468+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-4] c.example.truck_ai.service.TripService   : getTripsByVehicleId() start: vehicleId=1
+Hibernate: 
+    select
+        v1_0.vehicle_id,
+        v1_0.current_driver_name,
+        v1_0.fleet_owner_id 
+    from
+        vehicles v1_0 
+    where
+        v1_0.vehicle_id=?
+Hibernate: 
+    select
+        t1_0.trip_id,
+        t1_0.completed_at,
+        t1_0.destination_place,
+        t1_0.origin_place,
+        t1_0.started_at,
+        t1_0.status,
+        t1_0.vehicle_id 
+    from
+        trips t1_0 
+    where
+        t1_0.vehicle_id=? 
+    order by
+        t1_0.started_at desc
+2026-08-08T12:36:40.516+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-4] c.example.truck_ai.service.TripService   : getTripsByVehicleId(): found 1 trips for vehicleId=1
+2026-08-08T12:36:43.692+05:30  INFO 24904 --- [truck-ai] [io-8084-exec-10] c.e.truck_ai.controller.TripController   : HTTP GET /api/trips
+2026-08-08T12:36:43.692+05:30 DEBUG 24904 --- [truck-ai] [io-8084-exec-10] c.example.truck_ai.service.TripService   : getAllTrips() start
+Hibernate: 
+    select
+        t1_0.trip_id,
+        t1_0.completed_at,
+        t1_0.destination_place,
+        t1_0.origin_place,
+        t1_0.started_at,
+        t1_0.status,
+        t1_0.vehicle_id 
+    from
+        trips t1_0
+2026-08-08T12:36:43.710+05:30  INFO 24904 --- [truck-ai] [io-8084-exec-10] c.example.truck_ai.service.TripService   : getAllTrips(): found 8 trips
+2026-08-08T12:36:50.248+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-2] c.e.truck_ai.controller.TripController   : HTTP GET /api/trips?status=COMPLETED
+2026-08-08T12:36:50.248+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-2] c.example.truck_ai.service.TripService   : getTripsByStatus() start: status=COMPLETED
+Hibernate: 
+    select
+        t1_0.trip_id,
+        t1_0.completed_at,
+        t1_0.destination_place,
+        t1_0.origin_place,
+        t1_0.started_at,
+        t1_0.status,
+        t1_0.vehicle_id 
+    from
+        trips t1_0 
+    where
+        t1_0.status=?
+2026-08-08T12:36:50.250+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-2] c.example.truck_ai.service.TripService   : getTripsByStatus(): found 5 trips for status=COMPLETED
+2026-08-08T12:36:50.281+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-8] c.e.truck_ai.controller.TripController   : HTTP GET /api/trips?status=IN_TRANSIT
+2026-08-08T12:36:50.281+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-8] c.example.truck_ai.service.TripService   : getTripsByStatus() start: status=IN_TRANSIT
+Hibernate: 
+    select
+        t1_0.trip_id,
+        t1_0.completed_at,
+        t1_0.destination_place,
+        t1_0.origin_place,
+        t1_0.started_at,
+        t1_0.status,
+        t1_0.vehicle_id 
+    from
+        trips t1_0 
+    where
+        t1_0.status=?
+2026-08-08T12:36:50.295+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-8] c.example.truck_ai.service.TripService   : getTripsByStatus(): found 2 trips for status=IN_TRANSIT
+2026-08-08T12:36:50.334+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-6] c.e.truck_ai.controller.TripController   : HTTP GET /api/trips/1
+2026-08-08T12:36:50.335+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-6] c.example.truck_ai.service.TripService   : getTripById() start: tripId=1
+Hibernate: 
+    select
+        t1_0.trip_id,
+        t1_0.completed_at,
+        t1_0.destination_place,
+        t1_0.origin_place,
+        t1_0.started_at,
+        t1_0.status,
+        t1_0.vehicle_id 
+    from
+        trips t1_0 
+    where
+        t1_0.trip_id=?
+2026-08-08T12:36:50.383+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-4] c.e.truck_ai.controller.TripController   : HTTP GET /api/trips/999999
+2026-08-08T12:36:50.383+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-4] c.example.truck_ai.service.TripService   : getTripById() start: tripId=999999
+Hibernate: 
+    select
+        t1_0.trip_id,
+        t1_0.completed_at,
+        t1_0.destination_place,
+        t1_0.origin_place,
+        t1_0.started_at,
+        t1_0.status,
+        t1_0.vehicle_id 
+    from
+        trips t1_0 
+    where
+        t1_0.trip_id=?
+2026-08-08T12:36:50.383+05:30  WARN 24904 --- [truck-ai] [nio-8084-exec-4] c.example.truck_ai.service.TripService   : getTripById() rejected: no Trip found for tripId=999999
+2026-08-08T12:36:50.383+05:30  WARN 24904 --- [truck-ai] [nio-8084-exec-4] c.e.t.exception.GlobalExceptionHandler   : Handled EntityNotFoundException -> 404: No trip found for tripId=999999
+2026-08-08T12:36:54.223+05:30  INFO 24904 --- [truck-ai] [io-8084-exec-10] c.e.truck_ai.controller.TripController   : HTTP GET /api/trips/1/events
+2026-08-08T12:36:54.223+05:30 DEBUG 24904 --- [truck-ai] [io-8084-exec-10] c.e.truck_ai.service.TripEventService    : getEventsByTripIdSortedDesc() start: tripId=1
+Hibernate: 
+    select
+        te1_0.event_id,
+        te1_0.confidence,
+        te1_0.detected_language,
+        te1_0.estimated_distance_from_previous,
+        te1_0.event_type,
+        te1_0.extracted_location,
+        te1_0.extracted_timestamp,
+        te1_0.idempotency_key,
+        te1_0.incident_sub_type,
+        te1_0.raw_text,
+        te1_0.received_at,
+        te1_0.sender_name,
+        te1_0.source_channel,
+        te1_0.status,
+        te1_0.trip_id 
+    from
+        trip_events te1_0 
+    where
+        te1_0.trip_id=? 
+    order by
+        coalesce(te1_0.extracted_timestamp, te1_0.received_at) desc
+2026-08-08T12:36:54.248+05:30  INFO 24904 --- [truck-ai] [io-8084-exec-10] c.e.truck_ai.service.TripEventService    : getEventsByTripIdSortedDesc(): found 35 events for tripId=1
+2026-08-08T12:36:54.296+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-2] c.e.t.controller.TripEventController     : HTTP GET /api/events
+2026-08-08T12:36:54.296+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-2] c.e.truck_ai.service.TripEventService    : getAllEvents() start
+Hibernate: 
+    select
+        te1_0.event_id,
+        te1_0.confidence,
+        te1_0.detected_language,
+        te1_0.estimated_distance_from_previous,
+        te1_0.event_type,
+        te1_0.extracted_location,
+        te1_0.extracted_timestamp,
+        te1_0.idempotency_key,
+        te1_0.incident_sub_type,
+        te1_0.raw_text,
+        te1_0.received_at,
+        te1_0.sender_name,
+        te1_0.source_channel,
+        te1_0.status,
+        te1_0.trip_id 
+    from
+        trip_events te1_0 
+    order by
+        coalesce(te1_0.extracted_timestamp, te1_0.received_at) desc
+2026-08-08T12:36:54.310+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-2] c.e.truck_ai.service.TripEventService    : getAllEvents(): found 70 events
+2026-08-08T12:37:15.334+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-8] c.e.truck_ai.controller.TripController   : HTTP GET /api/trips/1/events
+2026-08-08T12:37:15.335+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-8] c.e.truck_ai.service.TripEventService    : getEventsByTripIdSortedDesc() start: tripId=1
+Hibernate: 
+    select
+        te1_0.event_id,
+        te1_0.confidence,
+        te1_0.detected_language,
+        te1_0.estimated_distance_from_previous,
+        te1_0.event_type,
+        te1_0.extracted_location,
+        te1_0.extracted_timestamp,
+        te1_0.idempotency_key,
+        te1_0.incident_sub_type,
+        te1_0.raw_text,
+        te1_0.received_at,
+        te1_0.sender_name,
+        te1_0.source_channel,
+        te1_0.status,
+        te1_0.trip_id 
+    from
+        trip_events te1_0 
+    where
+        te1_0.trip_id=? 
+    order by
+        coalesce(te1_0.extracted_timestamp, te1_0.received_at) desc
+2026-08-08T12:37:15.339+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-8] c.e.truck_ai.service.TripEventService    : getEventsByTripIdSortedDesc(): found 35 events for tripId=1
+2026-08-08T12:37:26.689+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-9] c.e.t.controller.TripEventController     : HTTP GET /api/events
+2026-08-08T12:37:26.689+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-9] c.e.truck_ai.service.TripEventService    : getAllEvents() start
+Hibernate: 
+    select
+        te1_0.event_id,
+        te1_0.confidence,
+        te1_0.detected_language,
+        te1_0.estimated_distance_from_previous,
+        te1_0.event_type,
+        te1_0.extracted_location,
+        te1_0.extracted_timestamp,
+        te1_0.idempotency_key,
+        te1_0.incident_sub_type,
+        te1_0.raw_text,
+        te1_0.received_at,
+        te1_0.sender_name,
+        te1_0.source_channel,
+        te1_0.status,
+        te1_0.trip_id 
+    from
+        trip_events te1_0 
+    order by
+        coalesce(te1_0.extracted_timestamp, te1_0.received_at) desc
+2026-08-08T12:37:26.697+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-9] c.e.truck_ai.service.TripEventService    : getAllEvents(): found 70 events
+2026-08-08T12:37:26.704+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-6] c.e.t.controller.TripEventController     : HTTP GET /api/events?eventType=LOCATION_UPDATE
+2026-08-08T12:37:26.704+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-6] c.e.truck_ai.service.TripEventService    : getEventsByType() start: eventType=LOCATION_UPDATE
+Hibernate: 
+    select
+        te1_0.event_id,
+        te1_0.confidence,
+        te1_0.detected_language,
+        te1_0.estimated_distance_from_previous,
+        te1_0.event_type,
+        te1_0.extracted_location,
+        te1_0.extracted_timestamp,
+        te1_0.idempotency_key,
+        te1_0.incident_sub_type,
+        te1_0.raw_text,
+        te1_0.received_at,
+        te1_0.sender_name,
+        te1_0.source_channel,
+        te1_0.status,
+        te1_0.trip_id 
+    from
+        trip_events te1_0 
+    where
+        te1_0.event_type=? 
+    order by
+        coalesce(te1_0.extracted_timestamp, te1_0.received_at) desc
+2026-08-08T12:37:26.707+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-6] c.e.truck_ai.service.TripEventService    : getEventsByType(): found 4 events for eventType=LOCATION_UPDATE
+2026-08-08T12:37:26.713+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-7] c.e.t.controller.TripEventController     : HTTP GET /api/events?maxConfidence=0.8
+2026-08-08T12:37:26.714+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-7] c.e.truck_ai.service.TripEventService    : getEventsByMaxConfidence() start: maxConfidence=0.8
+Hibernate: 
+    select
+        te1_0.event_id,
+        te1_0.confidence,
+        te1_0.detected_language,
+        te1_0.estimated_distance_from_previous,
+        te1_0.event_type,
+        te1_0.extracted_location,
+        te1_0.extracted_timestamp,
+        te1_0.idempotency_key,
+        te1_0.incident_sub_type,
+        te1_0.raw_text,
+        te1_0.received_at,
+        te1_0.sender_name,
+        te1_0.source_channel,
+        te1_0.status,
+        te1_0.trip_id 
+    from
+        trip_events te1_0 
+    where
+        te1_0.confidence<=? 
+    order by
+        coalesce(te1_0.extracted_timestamp, te1_0.received_at) desc
+2026-08-08T12:37:26.720+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-7] c.e.truck_ai.service.TripEventService    : getEventsByMaxConfidence(): found 2 events with confidence<=0.8
+2026-08-08T12:37:30.421+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-4] c.e.t.controller.TripEventController     : HTTP GET /api/events/31
+2026-08-08T12:37:30.421+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-4] c.e.truck_ai.service.TripEventService    : getEventById() start: eventId=31
+Hibernate: 
+    select
+        te1_0.event_id,
+        te1_0.confidence,
+        te1_0.detected_language,
+        te1_0.estimated_distance_from_previous,
+        te1_0.event_type,
+        te1_0.extracted_location,
+        te1_0.extracted_timestamp,
+        te1_0.idempotency_key,
+        te1_0.incident_sub_type,
+        te1_0.raw_text,
+        te1_0.received_at,
+        te1_0.sender_name,
+        te1_0.source_channel,
+        te1_0.status,
+        te1_0.trip_id 
+    from
+        trip_events te1_0 
+    where
+        te1_0.event_id=?
+2026-08-08T12:37:30.456+05:30  INFO 24904 --- [truck-ai] [io-8084-exec-10] c.e.t.controller.TripEventController     : HTTP GET /api/events/999999
+2026-08-08T12:37:30.456+05:30 DEBUG 24904 --- [truck-ai] [io-8084-exec-10] c.e.truck_ai.service.TripEventService    : getEventById() start: eventId=999999
+Hibernate: 
+    select
+        te1_0.event_id,
+        te1_0.confidence,
+        te1_0.detected_language,
+        te1_0.estimated_distance_from_previous,
+        te1_0.event_type,
+        te1_0.extracted_location,
+        te1_0.extracted_timestamp,
+        te1_0.idempotency_key,
+        te1_0.incident_sub_type,
+        te1_0.raw_text,
+        te1_0.received_at,
+        te1_0.sender_name,
+        te1_0.source_channel,
+        te1_0.status,
+        te1_0.trip_id 
+    from
+        trip_events te1_0 
+    where
+        te1_0.event_id=?
+2026-08-08T12:37:30.468+05:30  WARN 24904 --- [truck-ai] [io-8084-exec-10] c.e.truck_ai.service.TripEventService    : getEventById() rejected: no TripEvent found for eventId=999999
+2026-08-08T12:37:30.468+05:30  WARN 24904 --- [truck-ai] [io-8084-exec-10] c.e.t.exception.GlobalExceptionHandler   : Handled EntityNotFoundException -> 404: No trip event found for eventId=999999
+2026-08-08T12:37:30.500+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-1] c.e.t.controller.DashboardController     : HTTP GET /api/dashboard/summary
+2026-08-08T12:37:30.500+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-1] c.e.truck_ai.service.DashboardService    : getSummary() start
+Hibernate: 
+    select
+        count(*) 
+    from
+        trips t1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        trip_events te1_0
+Hibernate: 
+    select
+        count(te1_0.event_id) 
+    from
+        trip_events te1_0 
+    where
+        te1_0.confidence<?
+Hibernate: 
+    select
+        t1_0.status,
+        count(t1_0.trip_id) 
+    from
+        trips t1_0 
+    group by
+        t1_0.status
+2026-08-08T12:37:30.531+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-1] c.e.truck_ai.service.DashboardService    : getSummary(): totalTrips=8, totalEvents=70, lowConfidenceEventCount=2
+2026-08-08T12:37:40.229+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-3] c.e.t.controller.VehicleController       : HTTP GET /api/vehicles
+2026-08-08T12:37:40.229+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-3] c.e.truck_ai.service.VehicleService      : getAllVehicles() start
+Hibernate: 
+    select
+        v1_0.vehicle_id,
+        v1_0.current_driver_name,
+        v1_0.fleet_owner_id 
+    from
+        vehicles v1_0
+2026-08-08T12:37:40.229+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-3] c.e.truck_ai.service.VehicleService      : getAllVehicles(): found 9 vehicles
+2026-08-08T12:37:40.237+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-8] c.e.truck_ai.controller.TripController   : HTTP GET /api/trips
+2026-08-08T12:37:40.237+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-8] c.example.truck_ai.service.TripService   : getAllTrips() start
+Hibernate: 
+    select
+        t1_0.trip_id,
+        t1_0.completed_at,
+        t1_0.destination_place,
+        t1_0.origin_place,
+        t1_0.started_at,
+        t1_0.status,
+        t1_0.vehicle_id 
+    from
+        trips t1_0
+2026-08-08T12:37:40.237+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-8] c.example.truck_ai.service.TripService   : getAllTrips(): found 8 trips
+2026-08-08T12:37:40.237+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-9] c.e.t.controller.TripEventController     : HTTP GET /api/events
+2026-08-08T12:37:40.237+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-9] c.e.truck_ai.service.TripEventService    : getAllEvents() start
+Hibernate: 
+    select
+        te1_0.event_id,
+        te1_0.confidence,
+        te1_0.detected_language,
+        te1_0.estimated_distance_from_previous,
+        te1_0.event_type,
+        te1_0.extracted_location,
+        te1_0.extracted_timestamp,
+        te1_0.idempotency_key,
+        te1_0.incident_sub_type,
+        te1_0.raw_text,
+        te1_0.received_at,
+        te1_0.sender_name,
+        te1_0.source_channel,
+        te1_0.status,
+        te1_0.trip_id 
+    from
+        trip_events te1_0 
+    order by
+        coalesce(te1_0.extracted_timestamp, te1_0.received_at) desc
+2026-08-08T12:37:40.253+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-9] c.e.truck_ai.service.TripEventService    : getAllEvents(): found 70 events
+2026-08-08T12:37:40.257+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-6] c.e.t.controller.DashboardController     : HTTP GET /api/dashboard/summary
+2026-08-08T12:37:40.257+05:30 DEBUG 24904 --- [truck-ai] [nio-8084-exec-6] c.e.truck_ai.service.DashboardService    : getSummary() start
+Hibernate: 
+    select
+        count(*) 
+    from
+        trips t1_0
+Hibernate: 
+    select
+        count(*) 
+    from
+        trip_events te1_0
+Hibernate: 
+    select
+        count(te1_0.event_id) 
+    from
+        trip_events te1_0 
+    where
+        te1_0.confidence<?
+Hibernate: 
+    select
+        t1_0.status,
+        count(t1_0.trip_id) 
+    from
+        trips t1_0 
+    group by
+        t1_0.status
+2026-08-08T12:37:40.270+05:30  INFO 24904 --- [truck-ai] [nio-8084-exec-6] c.e.truck_ai.service.DashboardService    : getSummary(): totalTrips=8, totalEvents=70, lowConfidenceEventCount=2
