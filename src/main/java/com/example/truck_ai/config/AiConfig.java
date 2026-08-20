@@ -10,8 +10,7 @@ import org.springframework.context.annotation.Configuration;
 public class AiConfig {
 
     @Bean
-    ChatClient chatClient(ChatClient.Builder builder) {
-        log.info("KEY LOADED: " + System.getenv("ANTHROPIC_API_KEY"));
+    ChatClient chatClient(ChatClient.Builder builder) {x
         return builder.build();
     }
 }
