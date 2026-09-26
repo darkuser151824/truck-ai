@@ -63,7 +63,7 @@ public class TripTransitionService {
     }
 
     public void validateTransition(Long tripId, TripStatus current, TripStatus target) {
-        if (current == TripStatus.COMPLETED || current == TripStatus.CANCELLED) {
+        if (isTerminal(current)) {
             log.warn("validateTransition() rejected: tripId={} is already terminal at {}", tripId, current);
             throw new InvalidTripTransitionException(tripId, current, target);
         }
@@ -76,5 +76,9 @@ public class TripTransitionService {
             log.warn("validateTransition() rejected: tripId={} cannot move {} -> {} (not forward)", tripId, current, target);
             throw new InvalidTripTransitionException(tripId, current, target);
         }
+    }
+
+    public boolean isTerminal(TripStatus status) {
+        return status == TripStatus.COMPLETED || status == TripStatus.CANCELLED;
     }
 }

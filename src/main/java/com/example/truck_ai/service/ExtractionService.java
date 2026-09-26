@@ -1,20 +1,19 @@
 package com.example.truck_ai.service;
 
 import com.example.truck_ai.dto.ExtractedEvent;
-import com.example.truck_ai.entity.Trip;
 import com.example.truck_ai.entity.TripEvent;
 import com.example.truck_ai.enums.EventStatus;
 import com.example.truck_ai.enums.EventType;
 import com.example.truck_ai.enums.IncidentSubType;
-import com.example.truck_ai.enums.TripStatus;
+import com.example.truck_ai.events.TripEventExtractedEvent;
 import com.example.truck_ai.events.TripEventIngestedEvent;
 import com.example.truck_ai.repository.TripEventRepository;
-import com.example.truck_ai.repository.TripRepository;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.ai.anthropic.AnthropicChatOptions;
 import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.event.EventListener;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
@@ -29,8 +28,7 @@ public class ExtractionService {
 
     private final ChatClient chatClient;
     private final TripEventRepository tripEventRepository;
-    private final TripTransitionService tripTransitionService;
-    private final TripRepository tripRepository;
+    private final ApplicationEventPublisher eventPublisher;
 
     private static final String SYSTEM_PROMPT = """
     You are extracting structured fleet-operation data from a raw driver or dispatcher message.
@@ -121,27 +119,15 @@ public class ExtractionService {
             event.setDetectedLanguage(result.detectedLanguage());
             event.setConfidence(result.confidence());
             event.setStatus(EventStatus.EXTRACTED);
-            tripEventRepository.save(event);
+            TripEvent saved = tripEventRepository.save(event);
 
-            driveTripStatus(event);
             log.info("extract(): eventId={} extracted, eventType={}, confidence={}",
-                    event.getEventId(), event.getEventType(), event.getConfidence());
+                    saved.getEventId(), saved.getEventType(), saved.getConfidence());
+            eventPublisher.publishEvent(new TripEventExtractedEvent(saved.getEventId()));
         } catch (Exception e) {
             log.warn("extract(): failed for eventId={}, staying RAW: {}",
                     event.getEventId(), e.getMessage());
         }
     }
-    private void driveTripStatus(TripEvent event) {
-        Trip trip = event.getTrip();
-        if (event.getEventType() == EventType.UNLOAD) {
-            trip.setStatus(TripStatus.COMPLETED);
-            tripRepository.save(trip);
-        } else if (event.getEventType() == EventType.LOAD) {
-            trip.setStatus(TripStatus.IN_TRANSIT);
-            tripRepository.save(trip);
-        }
-    }
-
-
 
 }

@@ -1,6 +1,7 @@
 package com.example.truck_ai.repository;
 
 import com.example.truck_ai.entity.TripEvent;
+import com.example.truck_ai.enums.EventStatus;
 import com.example.truck_ai.enums.EventType;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -40,4 +41,12 @@ public interface TripEventRepository extends JpaRepository<TripEvent, Long> {
     Page<TripEvent> findByConfidenceLessThanEqualOrderedByTimestampDesc(@Param("maxConfidence") Double maxConfidence, Pageable pageable);
 
     long countByConfidenceLessThan(Double confidence);
+
+    // Gate 2 (trip-state ordering) uses this to check, e.g., that an UNLOAD has a prior
+    // confirmed LOAD on the same trip before it's allowed to proceed to CONFIRMED.
+    @Query("SELECT COUNT(e) > 0 FROM TripEvent e " +
+            "WHERE e.trip.tripId = :tripId AND e.eventType = :eventType AND e.status = :status")
+    boolean existsByTripIdAndEventTypeAndStatus(@Param("tripId") Long tripId,
+                                                 @Param("eventType") EventType eventType,
+                                                 @Param("status") EventStatus status);
 }
